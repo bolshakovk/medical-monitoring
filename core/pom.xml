@@ -36,6 +36,10 @@
         </dependency>
         <dependency>
             <groupId>liga.medical</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>liga.medical</groupId>
             <artifactId>monitoring-core-api</artifactId>
         </dependency>
         <dependency>
@@ -50,7 +54,7 @@
     </dependencies>
 
     <build>
-<!--        <finalName>analyzer-service</finalName>-->
+        <finalName>medical-monitoring-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
