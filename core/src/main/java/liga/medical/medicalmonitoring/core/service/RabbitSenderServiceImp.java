@@ -22,12 +22,12 @@ public class RabbitSenderServiceImp implements RabbitSenderService {
     public void sendMessage(RabbitMessageDTO rabbitMessageDTO, String names) throws JsonProcessingException {
         String messageStr = objectMapper.writeValueAsString(rabbitMessageDTO);
         amqpTemplate.convertAndSend(names, messageStr);
-        System.out.println(String.format("Сообщение [%s] в очередь [%s] отправлено", messageStr, names));
+        System.out.println(String.format("Message [%s] send to queue [%s]", messageStr, names));
     }
 
     @Override
     public void sendError(String str) {
-        amqpTemplate.convertAndSend(QueueNames.ALERT_QUEUE_NAME, str);
-        System.out.println("Сообщение с ошибкой направлено в очередь error");
+        amqpTemplate.convertAndSend(QueueNames.ERROR_QUEUE_NAME, str);
+        System.out.println("Message with" + str + " send to queue " + QueueNames.ERROR_QUEUE_NAME);
     }
 }

@@ -35,7 +35,7 @@ public class Config {
     }
 
     @Bean("dailyQueue")
-    public Queue getSimpleQueue(){
+    public Queue getDailyQueue(){
         return new Queue(QueueNames.DAILY_QUEUE_NAME);
     }
 
