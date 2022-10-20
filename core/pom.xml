@@ -12,7 +12,7 @@
     </parent>
 
     <packaging>jar</packaging>
-    <artifactId>medical-monitoring-core</artifactId>
+    <artifactId>medical-monitoring</artifactId>
 
     <dependencies>
         <dependency>
