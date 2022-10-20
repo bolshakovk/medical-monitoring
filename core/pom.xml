@@ -30,6 +30,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
@@ -37,6 +41,10 @@
             <!--        Эта зависимость тянет компоненты спринга их тоже нужно сканировать-->
             <groupId>liga.medical</groupId>
             <artifactId>common-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>liga.medical</groupId>
+            <artifactId>common-core</artifactId>
         </dependency>
         <dependency>
             <groupId>liga.medical</groupId>
@@ -54,13 +62,21 @@
     </dependencies>
 
     <build>
-<!--        <finalName>analyzer-service</finalName>-->
+        <finalName>medical-monitoring-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+                <configuration>
+                    <mainClass>liga.medical.medicalmonitoring.core.MedicalMonitoringApplication</mainClass>
+                </configuration>
                 <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>build-info</id>
                         <goals>
