@@ -12,7 +12,7 @@
     </parent>
 
     <packaging>jar</packaging>
-    <artifactId>monitoring-core</artifactId>
+    <artifactId>medical-monitoring-core</artifactId>
 
     <dependencies>
         <dependency>
@@ -22,7 +22,15 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,6 +41,10 @@
             <!--        Эта зависимость тянет компоненты спринга их тоже нужно сканировать-->
             <groupId>liga.medical</groupId>
             <artifactId>common-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>liga.medical</groupId>
+            <artifactId>common-core</artifactId>
         </dependency>
         <dependency>
             <groupId>liga.medical</groupId>
@@ -50,13 +62,21 @@
     </dependencies>
 
     <build>
-<!--        <finalName>analyzer-service</finalName>-->
+        <finalName>medical-monitoring-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+                <configuration>
+                    <mainClass>liga.medical.medicalmonitoring.core.MedicalMonitoringApplication</mainClass>
+                </configuration>
                 <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>build-info</id>
                         <goals>
