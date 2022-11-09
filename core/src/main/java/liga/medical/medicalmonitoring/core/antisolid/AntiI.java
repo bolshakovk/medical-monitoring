@@ -1,4 +1,4 @@
-package antisolid;
+package liga.medical.medicalmonitoring.core.antisolid;
 
 
 public class AntiI implements interfaceAnti {

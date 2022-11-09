@@ -1,10 +1,9 @@
 package liga.medical.medicalmonitoring.core.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import liga.medical.medicalmonitoring.core.model.QueueNames;
-import liga.medical.medicalmonitoring.core.model.RabbitMessageDTO;
+import model.RabbitMessageDto;
 
 public interface RabbitSenderService {
-    void sendMessage(RabbitMessageDTO rabbitMessageDTO, String names) throws JsonProcessingException;
+    void sendMessage(RabbitMessageDto rabbitMessageDTO, String names) throws JsonProcessingException;
     void sendError(String str);
 }

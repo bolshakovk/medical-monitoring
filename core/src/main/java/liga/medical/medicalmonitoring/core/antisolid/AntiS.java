@@ -1,4 +1,4 @@
-package antisolid;
+package liga.medical.medicalmonitoring.core.antisolid;
 //Пример, человек, у которого есть обязанности петь и танцевать назван классом AntiS
 //По хорошему нужно разделить два метода по разным классам
 public class AntiS {

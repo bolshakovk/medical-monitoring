@@ -1,4 +1,4 @@
-package antisolid;
+package liga.medical.medicalmonitoring.core.antisolid;
 
 import java.io.*;
 import java.net.ServerSocket;
